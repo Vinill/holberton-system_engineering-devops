@@ -1,2 +1,2 @@
 #!/bin/bash
-chown --from = guillaume:incent 
+chown from = guillaume:incent 
