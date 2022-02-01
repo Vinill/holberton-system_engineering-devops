@@ -1,3 +1,2 @@
 #!/bin/bash
-myvariable=$(whoami)
-echo "hello $myvariable"
+myvariable=$(whoami) | echo "hello $myvariable"
