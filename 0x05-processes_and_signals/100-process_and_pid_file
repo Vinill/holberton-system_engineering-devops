@@ -7,12 +7,13 @@ delete()
     exit
 }
 
-touch /var/run/myscript.pid
+echo "$$" > /var/run/myscript.pid
+
 while :
   do
-    trap 'delete' 15
-    trap 'echo "Y U no love me?!"' 2
-    trap 'rm -r /var/run/myscript.pid' 3
     echo "To infinity and beyond"
     sleep 2
+    trap 'echo "Y U no love me?!"' 2
+    trap 'echo "I hate the kill command" && delete' 3
+    trap 'delete' SIGQUIT
   done
