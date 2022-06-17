@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script does some stuff
+
+delete()
+{
+    rm /var/run/myscript.pid
+    exit
+}
+
+touch /var/run/myscript.pid
+
+while :
+    do
+      trap 'echo "I hate the kill command"' SIGTERM
+      trap 'echo "Y U no love me?"' SIGINT
+      echo "To infinity and beyond"
+      sleep 2
+    done
