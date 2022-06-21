@@ -16,3 +16,4 @@ while :
     trap 'echo "I hate the kill command" && delete' SIGTERM
     trap 'delete' SIGQUIT
   done
+  
